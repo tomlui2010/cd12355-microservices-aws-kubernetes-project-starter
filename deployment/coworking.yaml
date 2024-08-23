@@ -45,12 +45,14 @@ spec:
           initialDelaySeconds: 5
           timeoutSeconds: 5
         envFrom:
-        - configMapRef:
-            name: <NAME OF THE ConfigMap>
+          - configMapRef:
+            name: analytics-app-configmap
+          - secretKeyRef:
+              name: analytics-app-db-pwd
         env:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: <NAME OF THE Secret>
-              key: <THE KEY FROM Secret WHICH has THE ENCODED PASSWORD>
+              name: analytics-app-db-pwd
+              key: DB_PASSWORD
       restartPolicy: Always
