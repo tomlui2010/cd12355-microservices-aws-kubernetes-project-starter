@@ -7,7 +7,7 @@ phases:
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
-      - pip install -r requirements.txt
+      - pip install -r analytics/requirements.txt
   pre_build:
     commands:
     - echo Logging into ECR
