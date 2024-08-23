@@ -1,9 +1,5 @@
 FROM python:3.9-slim-buster
 
-# Setup and activate virtual python environment 
-ENV VIRTUAL_ENV=~/.venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Working Directory
 WORKDIR /app
@@ -24,4 +20,4 @@ ENV PYTHONPATH /app/
 
 EXPOSE 5153
 
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5153"]
